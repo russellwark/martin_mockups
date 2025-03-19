@@ -2704,8 +2704,26 @@
                         transition: all 0.3s ease-in-out;
                         z-index: 9999;
 						overflow-y: scroll;
+                        &.modal-lightbox {
+                            width: 60vw;
+                            height: 75vh;
+                            left: 20vw;
+                            top: 12.5vh;
+                        }
                         &.open {
                             right: 0vw;
+                        }
+                        &.modal-lightbox {
+                            width: 60vw;
+                            height: 75vh;
+                            left: 20vw;
+                            top: 12.5vh;
+                            display: none;
+                            max-width: 60vw;
+                            border-radius: 1.5rem;
+                            &.open {
+                                display: block;
+                            }
                         }
                         @media (max-width: 767px) {
                             width: 100vw;
@@ -2973,7 +2991,7 @@
                     </p>
                 </div>
                 
-                <div class="modal-popover reviews">
+                <div class="modal-popover reviews modal-lightbox">
 					<div class="closebox"></div>
                     <p>
 						<div class="yotpo-reviews-container" data-url="https://www.martinguitar.com/on/demandware.store/Sites-MartinGuitar_US-Site/default/Yotpo-GetReviewsForProduct?pid=D-X2E-Billy-Strings" aria-hidden="false">
