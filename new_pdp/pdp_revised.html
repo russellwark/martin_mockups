@@ -2841,10 +2841,57 @@
                     }
 
                     details.spec-content {
+                        width: 100%;
+                        border-bottom: 1px solid #ccc;
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+                        background-color: #fff;
+                        padding-bottom: 14px;
+                        &:first-child {
+                            border-top: 1px solid #ccc;
+                        }
+
                         &::details-content {
                             height: 0;
                             transition: height 0.4s, content-visibility 1s;
                             transition-behavior: allow-discrete;
+                        }
+
+                        summary {
+                            list-style: none;
+                            display: flex;
+                            justify-content: space-between;
+                            font-size: 1rem;
+                            text-decoration: underline;
+                            cursor: pointer;
+                            font-weight: bold;
+                            background-color: #fff;
+                        
+                            &::marker {
+                                display: none;
+                            }
+                            &::-webkit-details-marker {
+                                display: none;
+                            }
+                            &::after {
+                                content: '';
+                                width: 18px;
+                                height: 10px;
+                                background-size: cover;
+                                margin-left: .75em;
+                                transition: 0.2s;
+                                transform: rotate(90deg);
+                                background-image: url("data:image/svg+xml,%3Csvg%20height%3D%22800px%22%20width%3D%22800px%22%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20%20viewBox%3D%220%200%20185.343%20185.343%22%20xml%3Aspace%3D%22preserve%22%3E%3Cg%3E%3Cg%3E%3Cpath%20style%3D%22fill%3A%23010002%3B%22%20d%3D%22M51.707%2C185.343c-2.741%2C0-5.493-1.044-7.593-3.149c-4.194-4.194-4.194-10.981%2C0-15.175l74.352-74.347L44.114%2C18.32c-4.194-4.194-4.194-10.987%2C0-15.175c4.194-4.194%2C10.987-4.194%2C15.18%2C0l81.934%2C81.934c4.194%2C4.194%2C4.194%2C10.987%2C0%2C15.175l-81.934%2C81.939C57.201%2C184.293%2C54.454%2C185.343%2C51.707%2C185.343z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+                                background-position: center;
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                            }
+
+
+                        }
+
+                        &[open] > summary::after {
+                            transform: rotate(270deg);
                         }
 
                         &[open]::details-content {
@@ -2913,13 +2960,46 @@
                               <span class="accordion-title">
                                 Top
                               </span>
-                              <span class="accordion-icon" aria-hidden="true">
-                                &plus;
-                              </span>
                     
                             </summary>
                             <div class="accordion-content">
                               <p>Sitka spruce</p>
+                            </div>
+                          </details>
+
+                          <details class="spec-content accordion-item">
+                            <summary class="accordion-trigger">
+                              <span class="accordion-title">
+                                Body
+                              </span>
+                    
+                            </summary>
+                            <div class="accordion-content">
+                              <p>Mahoganye</p>
+                            </div>
+                          </details>
+
+                          <details class="spec-content accordion-item">
+                            <summary class="accordion-trigger">
+                              <span class="accordion-title">
+                                Neck
+                              </span>
+                    
+                            </summary>
+                            <div class="accordion-content">
+                              <p>Mahogany</p>
+                            </div>
+                          </details>
+
+                          <details class="spec-content accordion-item">
+                            <summary class="accordion-trigger">
+                              <span class="accordion-title">
+                                Headstock
+                              </span>
+                    
+                            </summary>
+                            <div class="accordion-content">
+                              <p>Mahogany</p>
                             </div>
                           </details>
 
