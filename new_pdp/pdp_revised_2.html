@@ -2829,6 +2829,10 @@
                             }
                         }
                     }
+
+                    #tns2-ow > div.tns-controls {
+                        display: none;
+                    }
                     
                 </style>
 				<div class="modal-curtain"></div>
@@ -9945,12 +9949,6 @@ and then makes a call to render the configured template with the returned recomm
 
         <script type="text/javascript">
             // Russ popover handler
-			// fake jQuery
-
-			// const $ = (selector, base = document) => {
-			// 	let elements = base.querySelectorAll(selector);
-			// 	return (elements.length == 1) ? elements[0] : elements;
-			// }
 
             document.querySelector(".add-wishlist").addEventListener("click", function() {
                 document.querySelector(".add-wishlist").classList.toggle("active");
@@ -9984,25 +9982,20 @@ and then makes a call to render the configured template with the returned recomm
 			}
             $(function() {
                 $(document).on("click", function(e) {
-                    console.log("9985. clicky");
                     if ($(e.target).closest(".modal-popover").length === 0) {
-                        console.log("click outside");
                         if ($(".modal-popover.open").length > 0) {
                             let openPopover = $(".modal-popover.open");
                             let thePopoverElem = "";
-                            var classList = openPopover.attr('class').split(/\s+/);
+                            let classList = openPopover.attr('class').split(/\s+/);
                             $.each(classList, function(index, item) {
                                 if (item != 'modal-popover' && item != "open") {
                                     thePopoverElem = item;
                                 }
                             });
-                            console.log("popover is open - item is " +thePopoverElem);
                             $(".modal-curtain").removeClass("open");
                             $(".modal-popover."+thePopoverElem).removeClass("open"); 
                         }
-                    } else {
-                        console.log("click inside");
-                    }
+                    } 
                 });
             });
      </script>
