@@ -2580,6 +2580,9 @@
                 <!-- New styles from Russ -->
                  
                  <style>
+                    :root {
+                        interpolate-size: allow-keywords;
+                    }
                     h2.product-subtitle {
                         font-size: 1.5rem;
                         font-weight: normal;
@@ -2755,7 +2758,35 @@
                         .badge-product {
                             width: 100%;
                         }
-                    }        
+                    }
+
+                    details.spec-content {
+                        &::details-content {
+                            height: 0;
+                            transition: height 0.4s, content-visibility 1s;
+                            transition-behavior: allow-discrete;
+                        }
+
+                        &[open]::details-content {
+                            height: auto;
+                        }
+                    }
+
+                    .add-wishlist {
+                        position: absolute;
+                        top: 10px;
+                        right: 2rem;
+                        transition: all 0.3s linear;
+                        i {
+                            font-size: 24px;
+                            color: #333;
+                        }
+                        &.active {
+                            i {
+                                color: #f00;
+                            }
+                        }
+                    }
                 </style>
 				<div class="modal-curtain"></div>
                 <div class="modal-popover desc">
@@ -2788,6 +2819,21 @@
                                 Ply Hardshell Case<br>
                                 Authentic Acoustic Lifespan® 2.0 Guitar Strings Phosphor Bronze - Light</p>
                         </div>
+
+                        <details class="spec-content accordion-item">
+                            <summary class="accordion-trigger">
+                              <span class="accordion-title">
+                                Top
+                              </span>
+                              <span class="accordion-icon" aria-hidden="true">
+                                &plus;
+                              </span>
+                    
+                            </summary>
+                            <div class="accordion-content">
+                              <p>Sitka spruce</p>
+                            </div>
+                          </details>
 
                         <div class="mb-4">
                             <span class="font-weight-bold">Recommended Strings:</span>
@@ -3186,6 +3232,7 @@
                                 <div class="col">
                                     <h1 class="product-name hidden-sm-down">D-X2E Billy Strings</h1>
                                     <h2 class="product-subtitle desktop">This is the subtitle</h2>
+                                    <div class="add-wishlist"><i class="fa fa-heart"></i></div>
                                     
                                 </div>
                                 <div class="hidden-sm-down">
@@ -9840,6 +9887,11 @@ and then makes a call to render the configured template with the returned recomm
 				let elements = base.querySelectorAll(selector);
 				return (elements.length == 1) ? elements[0] : elements;
 			}
+
+            document.querySelector(".add-wishlist").addEventListener("click", function() {
+                console.log("9892. clicky");
+                document.querySelector(".add-wishlist").classList.toggle("active");
+            })
 
             let allDescButtons = $("div.description-button");
 			let alreadyOpen = false;
