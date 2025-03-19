@@ -2624,6 +2624,12 @@
                         margin-top: 2rem;
                         display: block !important;
                         min-height: 2rem;
+                        @media (max-width: 767px) {
+                            margin-right: 0 !important;
+                            &:first-of-type {
+                                display: none !important;
+                            }
+                        }
                     }
 
                     .yotpo-display-wrapper {
