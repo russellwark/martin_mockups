@@ -9912,17 +9912,16 @@ and then makes a call to render the configured template with the returned recomm
             // Russ popover handler
 			// fake jQuery
 
-			const $ = (selector, base = document) => {
-				let elements = base.querySelectorAll(selector);
-				return (elements.length == 1) ? elements[0] : elements;
-			}
+			// const $ = (selector, base = document) => {
+			// 	let elements = base.querySelectorAll(selector);
+			// 	return (elements.length == 1) ? elements[0] : elements;
+			// }
 
             document.querySelector(".add-wishlist").addEventListener("click", function() {
-                console.log("9892. clicky");
                 document.querySelector(".add-wishlist").classList.toggle("active");
             })
 
-            let allDescButtons = $("div.description-button");
+            let allDescButtons = document.querySelectorAll("div.description-button");
 			let alreadyOpen = false;
             for(let elem of allDescButtons) {
                 elem.onclick = function(e) {
@@ -9932,20 +9931,20 @@ and then makes a call to render the configured template with the returned recomm
                     let allOpenDescButtons = $(".modal-popover.open");
 
                     if (allOpenDescButtons.length == 0) {
-						$(".modal-curtain").classList.toggle("open");
-						$(".modal-popover."+thePopoverElem).classList.toggle("open"); 
+						document.querySelector(".modal-curtain").classList.toggle("open");
+						document.querySelector(".modal-popover."+thePopoverElem).classList.toggle("open"); 
                     } else {
 						// do nothing - modal is open
 					}
                 };
             }
 
-			let allCloseboxes = $(".modal-popover .closebox");
+			let allCloseboxes = document.querySelectorAll(".modal-popover .closebox");
 			for(let elem of allCloseboxes) {
 				elem.onclick = function() {
 					let parentContainer = elem.parentNode.closest(".modal-popover");
 					parentContainer.classList.remove("open");
-					$(".modal-curtain").classList.remove("open");
+					document.querySelector(".modal-curtain").classList.remove("open");
 				}
 			}
      </script>
