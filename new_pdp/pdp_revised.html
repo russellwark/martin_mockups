@@ -2705,16 +2705,8 @@
                         z-index: 9999;
 						overflow-y: scroll;
                         &.modal-lightbox {
-                            width: 60vw;
-                            height: 75vh;
-                            left: 20vw;
-                            top: 12.5vh;
-                        }
-                        &.open {
-                            right: 0vw;
-                        }
-                        &.modal-lightbox {
-                            width: 60vw;
+                            @media (min-width: 768px) {
+                                width: 60vw;
                             height: 75vh;
                             left: 20vw;
                             top: 12.5vh;
@@ -2722,8 +2714,14 @@
                             max-width: 60vw;
                             border-radius: 1.5rem;
                             &.open {
-                                display: block;
+                                @media (min-width: 768px) {
+                                    display: block;
+                                }
                             }
+                            }
+                        }
+                        &.open {
+                            right: 0vw;
                         }
                         @media (max-width: 767px) {
                             width: 100vw;
@@ -2768,6 +2766,9 @@
                         margin-top: 2rem;
                         font-size: 24px !important;
                         padding-bottom: 2rem;
+                        &.mobile {
+                            font-size: 1rem !important;
+                        }
                     }
                     
                     .description-button {
@@ -2808,16 +2809,29 @@
                             width: 100%;
                         }
                         i.viewall-icon {
-                        text-indent: -9999px;
-                        width: 14px;
-                        height: 14px;
-                        background-image: url(./images/viewall.png);
-                        background-size: contain;
-                        background-repeat: no-repeat;
-                        display: inline-block;
-                        margin-bottom: -4px;
-                        margin-right: 4px;
+                            text-indent: -9999px;
+                            width: 14px;
+                            height: 14px;
+                            background-image: url(./images/viewall.png);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            display: inline-block;
+                            margin-bottom: -4px;
+                            margin-right: 4px;
+                        }
+                        
                     }
+
+                    .slide.tns-item:has(.view-all-images) {
+                        @media (max-width: 767px) {
+                            display: none;
+                        }
+                    }
+
+                    #tns2-mw {
+                        @media (max-width: 767px) {
+                            display: none;
+                        }
                     }
 
                     details.spec-content {
@@ -2837,6 +2851,9 @@
                         top: 10px;
                         right: 2rem;
                         transition: all 0.3s linear;
+                        @media (max-width: 767px) {
+                            top: 44px;
+                        }
                         i {
                             font-size: 24px;
                             color: #333;
@@ -3337,7 +3354,7 @@
 
                             <div class="row">
                                 <div class="col mb-1">
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="justify-content-between align-items-center">
                                         <div class="prices top-prices clearfix my-0">
                                             <div class="price">
                                                 <div>
