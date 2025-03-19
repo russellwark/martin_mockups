@@ -4,7 +4,9 @@
     <head>
         <!--[if gt IE 9]><!-->
 <script src="https://js.hs-banner.com/v2/322723/banner.js" type="text/javascript" id="cookieBanner-322723" data-cookieconsent="ignore" data-hs-ignore="true" data-loader="hs-scriptloader" data-hsjs-portal="322723" data-hsjs-env="prod" data-hsjs-hublet="na1"></script><script src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/322723.js" type="text/javascript" id="hs-analytics"></script><script type="text/javascript" async="" src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/destination"></script><script src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/pla"></script><script src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/player.js"></script><script async="" src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/events.js"></script><script type="text/javascript" async="" src="https://bat.bing.com/bat.js"></script><script type="text/javascript" async="" src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/tfa.js"></script><script async="" src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/capi.js"></script><script type="text/javascript" async="" src="./Martin D-28 Billy Strings Acoustic Guitar _ Martin Guitar_files/js"></script><script type="text/javascript" async="" src="./Martin D-28 Billy Strings Acoustic Guitar _ Martin Guitar_files/destination(1)"></script><script type="text/javascript" async="" src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/widget.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
 
 
 <script defer="" type="text/javascript" src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/main.js"></script>
@@ -9980,6 +9982,29 @@ and then makes a call to render the configured template with the returned recomm
 					document.querySelector(".modal-curtain").classList.remove("open");
 				}
 			}
+            $(function() {
+                $(document).on("click", function(e) {
+                    console.log("9985. clicky");
+                    if ($(e.target).closest(".modal-popover").length === 0) {
+                        console.log("click outside");
+                        if ($(".modal-popover.open").length > 0) {
+                            let openPopover = $(".modal-popover.open");
+                            let thePopoverElem = "";
+                            var classList = openPopover.attr('class').split(/\s+/);
+                            $.each(classList, function(index, item) {
+                                if (item != 'modal-popover' && item != "open") {
+                                    thePopoverElem = item;
+                                }
+                            });
+                            console.log("popover is open - item is " +thePopoverElem);
+                            $(".modal-curtain").removeClass("open");
+                            $(".modal-popover."+thePopoverElem).removeClass("open"); 
+                        }
+                    } else {
+                        console.log("click inside");
+                    }
+                });
+            });
      </script>
 
 
@@ -17305,9 +17330,7 @@ and then makes a call to render the configured template with the returned recomm
                 </div>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous"></script>
+        
         <script id="__lcly_script_inline_modal" type="text/javascript" src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/main(1).js" async=""></script>
         <script id="liveagent-esw-script" type="text/javascript" src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/liveagent.esw.min.js"></script>
         <script src="./Martin D-X2E Billy Strings Acoustic-Electric Guitar _ Martin Guitar_files/ps-widget.js" type="text/javascript" charset="UTF-8"></script>
