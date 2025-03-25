@@ -2944,24 +2944,40 @@
                     }
 
                     table.table.d-sm-none {
-                            tr {
-                                td {
-                                    padding: 0.5rem;
-                                }
+                        tr {
+                            td {
+                                padding: 0.5rem;
                             }
                         }
+                    }
 
-                        #slider-7a9138a7bd655233bed482e1b6-iw {
-                            @media (max-width: 767px) {
-                                padding-right: 8%;
-                            }
+                    #slider-7a9138a7bd655233bed482e1b6-iw {
+                        @media (max-width: 767px) {
+                            padding-right: 8%;
                         }
+                    }
 
-                        #slider-7a9138a7bd655233bed482e1b6-ow > div.tns-nav {
-                            @media (max-width: 767px) {
-                                display: none;
-                            }
+                    #slider-7a9138a7bd655233bed482e1b6-ow > div.tns-nav {
+                        @media (max-width: 767px) {
+                            display: none;
                         }
+                    }
+
+                    .product_callout {
+                        padding-left: 1.5rem;
+                        color: #999;
+                        &:before {
+                            font-family: FontAwesome;
+                            font-weight: normal;
+                            font-style: normal;
+                            display: inline-block;
+                            text-decoration: inherit;
+                            content: "\f05a";
+                            color: var(--brand-primary);
+                            display: inline-block;
+                            margin-right: 1rem;
+                        }
+                    }
                 </style>
 				<div class="modal-curtain"></div>
                 <div class="modal-popover gauges modal-lightbox">
@@ -3515,7 +3531,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h1 class="product-name hidden-sm-down">Authentic Acoustic Lifespan® 2.0 Guitar Strings Phosphor Bronze</h1>
-                                    <h2 class="product-subtitle desktop">This is the subtitle</h2>
+                                    <h2 class="product-subtitle desktop">Treated, Wrapped, Strings</h2>
                                     <div class="add-wishlist"><i class="fa fa-heart"></i></div>
                                     
                                 </div>
@@ -3527,7 +3543,7 @@
                             <div class="row d-md-none">
                                 <div class="col-12">
                                     <h1 class="product-name">Authentic Acoustic Lifespan® 2.0 Guitar Strings Phosphor Bronze</h1>
-                                    <h2 class="product-subtitle mobile">This is the subtitle</h2>
+                                    <h2 class="product-subtitle mobile">Treated, Wrapped, Strings</h2>
                                     <p class="main-description mobile">
                                         The Martin D-X2E Billy Strings takes inspiration from Billy’s love for his pre-war D-28 while offering a more accessible option for fans and players alike.
                                     </p>
@@ -3634,7 +3650,7 @@
                             </div>
 
                             <div class="row mt-3">
-                                
+                                <p class="product_callout">Available in individual sets, 3-packs, and bulk boxes.</p>
                             </div>
 
                             <div class="attributes product-detail-attributes" cypress-target="productDetailAttributes">
